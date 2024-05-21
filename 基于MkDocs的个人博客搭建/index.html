@@ -16,7 +16,7 @@
     
     
       
-        <title>写在前面 - Elsy's Blog</title>
+        <title>基于MkDocs的个人博客搭建 - Elsy's Blog</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#mkdocs" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              写在前面
+              基于MkDocs的个人博客搭建
             
           </span>
         </div>
@@ -300,6 +300,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      写在前面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是MkDocs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      搭建本地页面
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="搭建本地页面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建站点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置文件修改
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用Github发布在线网页
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -313,7 +390,8 @@
                   
 
 
-<h1 id="_1">写在前面</h1>
+<h1 id="mkdocs">基于MkDocs的个人博客搭建</h1>
+<h2 id="_1">写在前面</h2>
 <p>在尝试过Hugo、Jekyll等博客框架后，我最终选择了MkDocs+Github的方案，主要出于以下几点考虑：</p>
 <ol>
 <li>
@@ -334,18 +412,20 @@
 <li>python环境</li>
 <li>github使用</li>
 </ul>
-<h1 id="mkdocs">什么是MkDocs</h1>
+<p><br></p>
+<h2 id="mkdocs_1">什么是MkDocs</h2>
 <p>MkDocs是一个静态网站生成器，它专门为构建项目文档而设计。它的核心优势在于速度、简单性和美观度。想象一下，你有一个项目，需要为它创建文档，而MkDocs能帮你轻松搞定这一切。</p>
 <p>官网地址：https://www.mkdocs.org/
 新手教程：https://www.mkdocs.org/getting-started/
 用户手册：https://www.mkdocs.org/user-guide/</p>
-<h1 id="_2">搭建本地页面</h1>
-<h2 id="_3">安装</h2>
+<p><br></p>
+<h2 id="_2">搭建本地页面</h2>
+<h3 id="_3">安装</h3>
 <p>首先，请确保你的电脑已安装python环境，之后就可以基于pip安装mkdocs:</p>
 <pre><code class="language-bash">pip install mkdocs
 </code></pre>
 <p>接下来运行<code>mkdocs --version</code>确认安装是否成功。</p>
-<h2 id="_4">创建站点</h2>
+<h3 id="_4">创建站点</h3>
 <p>运行以下命令：（<code>dir_name</code>可以自由命名）</p>
 <pre><code class="language-bash">mkdocs new dir_name
 </code></pre>
@@ -353,7 +433,7 @@
 - 子目录<code>docs</code>: 博客的核心内容（.md文件）就包含在此目录下
 - 配置文件<code>mkdocs.yml</code>:暂时不用动它</p>
 <p>然后进入<code>dir_name</code>文件夹，运行<code>mkdocs serve</code>，命令行中会显示<code>Serving on http://...</code>,即可在本地访问该站点。</p>
-<h2 id="_5">配置文件修改</h2>
+<h3 id="_5">配置文件修改</h3>
 <p>可以通过编辑<code>mkdocs.yml</code>来修改页面格式，示例如下：</p>
 <pre><code class="language-yaml">site_name: Elsy's Blog
 theme:
@@ -362,7 +442,8 @@ nav:
         - 主页: index.md     
         - 关于: aboutme.md
 </code></pre>
-<h1 id="github">使用Github发布在线网页</h1>
+<p><br></p>
+<h2 id="github">使用Github发布在线网页</h2>
 <ol>
 <li>
 <p>在<code>dir_name</code>下运行<code>mkdocs build</code>,这会生成一个新文件夹<code>site</code>，其中包含了静态站点的页面内容。</p>
